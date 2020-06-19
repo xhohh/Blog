@@ -69,6 +69,20 @@
             标签Id
             </summary>
         </member>
+        <member name="M:FatTiger.Blog.Domain.Blog.Repositories.IPostTagRepository.BulkInsertAsync(System.Collections.Generic.IEnumerable{FatTiger.Blog.Domain.Blog.PostTag})">
+            <summary>
+            批量插入
+            </summary>
+            <param name="postTags"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FatTiger.Blog.Domain.Blog.Repositories.ITagRepository.BulkInsertAsync(System.Collections.Generic.IEnumerable{FatTiger.Blog.Domain.Blog.Tag})">
+            <summary>
+            批量插入
+            </summary>
+            <param name="tags"></param>
+            <returns></returns>
+        </member>
         <member name="P:FatTiger.Blog.Domain.Blog.Tag.TagName">
             <summary>
             标签名称

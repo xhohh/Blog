@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FatTiger.Blog.Application.Helloworld.impl
 {
-    public class HelloWorldService : FatTigerBlogApplicationServiceBase, IHelloWorldService
+    public class HelloWorldService : ServiceBase, IHelloWorldService
     {
         public string HelloWorld()
         {

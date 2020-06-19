@@ -4,5 +4,12 @@
         <name>FatTiger.Blog.HttpApi</name>
     </assembly>
     <members>
+        <member name="M:FatTiger.Blog.HttpApi.Controllers.BlogController.InsertPostAsync(FatTiger.Blog.Application.Contracts.Blog.PostDto)">
+            <summary>
+            添加博客
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

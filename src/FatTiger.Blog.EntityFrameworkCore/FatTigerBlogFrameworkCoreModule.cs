@@ -44,7 +44,7 @@ namespace FatTiger.Blog
                         options.UseSqlite();
                         break;
                     default:
-                        options.UseMySQL();
+                        options.UseSqlServer();
                         break;
                 }
             });
