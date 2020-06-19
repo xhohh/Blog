@@ -3,12 +3,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace FatTiger.Blog.EntityFrameworkCore.DbMigrations.Migrations
 {
-    public partial class Initial : Migration
+    public partial class _1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "fattiger_Categories",
+                name: "FatTiger_Categories",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -18,11 +18,11 @@ namespace FatTiger.Blog.EntityFrameworkCore.DbMigrations.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_fattiger_Categories", x => x.Id);
+                    table.PrimaryKey("PK_FatTiger_Categories", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "fattiger_Friendlinks",
+                name: "FatTiger_Friendlinks",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -32,11 +32,11 @@ namespace FatTiger.Blog.EntityFrameworkCore.DbMigrations.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_fattiger_Friendlinks", x => x.Id);
+                    table.PrimaryKey("PK_FatTiger_Friendlinks", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "fattiger_Post_Tags",
+                name: "FatTiger_Post_Tags",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -46,11 +46,11 @@ namespace FatTiger.Blog.EntityFrameworkCore.DbMigrations.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_fattiger_Post_Tags", x => x.Id);
+                    table.PrimaryKey("PK_FatTiger_Post_Tags", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "fattiger_Posts",
+                name: "FatTiger_Posts",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -65,11 +65,11 @@ namespace FatTiger.Blog.EntityFrameworkCore.DbMigrations.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_fattiger_Posts", x => x.Id);
+                    table.PrimaryKey("PK_FatTiger_Posts", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "fattiger_Tags",
+                name: "FatTiger_Tags",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -79,26 +79,26 @@ namespace FatTiger.Blog.EntityFrameworkCore.DbMigrations.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_fattiger_Tags", x => x.Id);
+                    table.PrimaryKey("PK_FatTiger_Tags", x => x.Id);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "fattiger_Categories");
+                name: "FatTiger_Categories");
 
             migrationBuilder.DropTable(
-                name: "fattiger_Friendlinks");
+                name: "FatTiger_Friendlinks");
 
             migrationBuilder.DropTable(
-                name: "fattiger_Post_Tags");
+                name: "FatTiger_Post_Tags");
 
             migrationBuilder.DropTable(
-                name: "fattiger_Posts");
+                name: "FatTiger_Posts");
 
             migrationBuilder.DropTable(
-                name: "fattiger_Tags");
+                name: "FatTiger_Tags");
         }
     }
 }

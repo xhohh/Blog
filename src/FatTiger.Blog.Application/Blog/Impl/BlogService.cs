@@ -17,14 +17,27 @@ namespace FatTiger.Blog.Application.Blog.Impl
             _postRepository = postRepository;
         }
 
-        public Task<bool> DeletePostAsync(int id)
+        public async Task<bool> DeletePostAsync(int id)
         {
-            throw new NotImplementedException();
+            await _postRepository.DeleteAsync(id);
+
+            return true;
         }
 
-        public Task<PostDto> GetPostAsync(int id)
+        public async Task<PostDto> GetPostAsync(int id)
         {
-            throw new NotImplementedException();
+            var post = await _postRepository.GetAsync(id);
+
+            return new PostDto
+            {
+                Title = post.Title,
+                Author = post.Author,
+                Url = post.Url,
+                Html = post.Html,
+                Markdown = post.Markdown,
+                CategoryId = post.CategoryId,
+                CreationTime = post.CreationTime
+            };
         }
 
         public async Task<bool> InsertPostAsync(PostDto dto)
@@ -44,9 +57,21 @@ namespace FatTiger.Blog.Application.Blog.Impl
             return post != null;
         }
 
-        public Task<bool> UpdatePostAsync(int id, PostDto dto)
+        public async Task<bool> UpdatePostAsync(int id, PostDto dto)
         {
-            throw new NotImplementedException();
+            var post = await _postRepository.GetAsync(id);
+
+            post.Title = dto.Title;
+            post.Author = dto.Author;
+            post.Url = dto.Url;
+            post.Html = dto.Html;
+            post.Markdown = dto.Markdown;
+            post.CategoryId = dto.CategoryId;
+            post.CreationTime = dto.CreationTime;
+
+            await _postRepository.UpdateAsync(post);
+
+            return true;
         }
     }
 }

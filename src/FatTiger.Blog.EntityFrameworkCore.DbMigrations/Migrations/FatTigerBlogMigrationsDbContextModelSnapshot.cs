@@ -38,7 +38,7 @@ namespace FatTiger.Blog.EntityFrameworkCore.DbMigrations.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("fattiger_Categories");
+                    b.ToTable("FatTiger_Categories");
                 });
 
             modelBuilder.Entity("FatTiger.Blog.Domain.Blog.FriendLink", b =>
@@ -60,7 +60,7 @@ namespace FatTiger.Blog.EntityFrameworkCore.DbMigrations.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("fattiger_Friendlinks");
+                    b.ToTable("FatTiger_Friendlinks");
                 });
 
             modelBuilder.Entity("FatTiger.Blog.Domain.Blog.Post", b =>
@@ -100,7 +100,7 @@ namespace FatTiger.Blog.EntityFrameworkCore.DbMigrations.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("fattiger_Posts");
+                    b.ToTable("FatTiger_Posts");
                 });
 
             modelBuilder.Entity("FatTiger.Blog.Domain.Blog.PostTag", b =>
@@ -118,7 +118,7 @@ namespace FatTiger.Blog.EntityFrameworkCore.DbMigrations.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("fattiger_Post_Tags");
+                    b.ToTable("FatTiger_Post_Tags");
                 });
 
             modelBuilder.Entity("FatTiger.Blog.Domain.Blog.Tag", b =>
@@ -140,7 +140,7 @@ namespace FatTiger.Blog.EntityFrameworkCore.DbMigrations.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("fattiger_Tags");
+                    b.ToTable("FatTiger_Tags");
                 });
 #pragma warning restore 612, 618
         }

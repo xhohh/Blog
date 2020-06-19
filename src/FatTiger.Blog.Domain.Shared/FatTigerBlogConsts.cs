@@ -9,6 +9,6 @@ namespace FatTiger.Blog.Domain.Shared
         /// <summary>
         /// 数据库表前缀
         /// </summary>
-        public const string DbTablePrefix = "fattiger_";
+        public const string DbTablePrefix = "FatTiger_";
     }
 }
