@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Abp" Version="5.9.0" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Redis" Version="2.2.0" />
+    <PackageReference Include="Volo.Abp.Caching" Version="2.9.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FatTiger.Blog.Application.Contracts\FatTiger.Blog.Application.Contracts.csproj" />
+    <ProjectReference Include="..\FatTiger.Blog.Domain.Shared\FatTiger.Blog.Domain.Shared.csproj" />
+    <ProjectReference Include="..\FatTiger.Blog.Domain\FatTiger.Blog.Domain.csproj" />
+    <ProjectReference Include="..\FatTiger.Blog.ToolKits\FatTiger.Blog.ToolKits.csproj" />
+  </ItemGroup>
+
+</Project>

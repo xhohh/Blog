@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>FatTiger.Blog.EntityFrameworkCore</RootNamespace>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore.MySQL" Version="2.7.0" />
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore.PostgreSql" Version="2.7.0" />
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" Version="2.7.0" />
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore.SqlServer" Version="2.7.0" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\FatTiger.Blog.Domain.Shared\FatTiger.Blog.Domain.Shared.csproj" />
+    <ProjectReference Include="..\FatTiger.Blog.Domain\FatTiger.Blog.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

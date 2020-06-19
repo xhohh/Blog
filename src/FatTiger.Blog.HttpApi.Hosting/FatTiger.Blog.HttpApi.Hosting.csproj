@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Volo.Abp.Autofac" Version="2.9.0" />
+    <ProjectReference Include="..\FatTiger.Blog.EntityFrameworkCore.DbMigrations\FatTiger.Blog.EntityFrameworkCore.DbMigrations.csproj" />
+
+    <ProjectReference Include="..\FatTiger.Blog.HttpApi\FatTiger.Blog.HttpApi.csproj" />
+
+    <ProjectReference Include="..\FatTiger.Blog.Swagger\FatTiger.Blog.Swagger.csproj" />
+  </ItemGroup>
+
+</Project>
