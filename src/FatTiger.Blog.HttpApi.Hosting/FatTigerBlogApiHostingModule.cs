@@ -12,7 +12,8 @@ namespace FatTiger.Blog.HttpApi.Hosting
        typeof(AbpAspNetCoreMvcModule),
        typeof(AbpAutofacModule),
        typeof(FatTigerBlogHttpApiModule),
-       typeof(FatTigerBlogSwaggerModule)
+       typeof(FatTigerBlogSwaggerModule),
+       typeof(FatTigerBlogFrameworkCoreModule)
     )]
     public class FatTigerBlogApiHostingModule : AbpModule
     {
