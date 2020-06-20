@@ -15,7 +15,6 @@
   </ItemGroup>
   
   <ItemGroup>
-    <ProjectReference Include="..\FatTiger.Blog.Domain.Shared\FatTiger.Blog.Domain.Shared.csproj" />
     <ProjectReference Include="..\FatTiger.Blog.Domain\FatTiger.Blog.Domain.csproj" />
   </ItemGroup>
 
