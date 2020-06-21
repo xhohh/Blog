@@ -113,5 +113,10 @@
             ConnectionStrings
             </summary>
         </member>
+        <member name="P:FatTiger.Blog.Domain.AppSettings.ApiVersion">
+            <summary>
+            ApiVersion
+            </summary>
+        </member>
     </members>
 </doc>

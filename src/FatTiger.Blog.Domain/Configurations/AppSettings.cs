@@ -31,5 +31,12 @@ namespace FatTiger.Blog.Domain
         /// ConnectionStrings
         /// </summary>
         public static string ConnectionStrings => _config.GetConnectionString(EnableDb);
+
+        /// <summary>
+        /// ApiVersion
+        /// </summary>
+        public static string ApiVersion => _config["ApiVersion"];
+
+
     }
 }

@@ -4,11 +4,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Volo.Abp.AspNetCore.Mvc;
+using static FatTiger.Blog.Domain.Shared.FatTigerBlogConsts;
 
 namespace FatTiger.Blog.HttpApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [ApiExplorerSettings(GroupName = Grouping.GroupName_v3)]
     public class HelloWorldController : AbpController
     {
         private readonly IHelloWorldService _helloWorldService;
