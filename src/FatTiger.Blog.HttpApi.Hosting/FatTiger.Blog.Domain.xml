@@ -123,6 +123,16 @@
             GitHub
             </summary>
         </member>
+        <member name="T:FatTiger.Blog.Domain.AppSettings.Caching">
+            <summary>
+            Caching
+            </summary>
+        </member>
+        <member name="P:FatTiger.Blog.Domain.AppSettings.Caching.RedisConnectionString">
+            <summary>
+            RedisConnectionString
+            </summary>
+        </member>
         <member name="F:FatTiger.Blog.Domain.Configurations.GitHubConfig.API_Authorize">
             <summary>
             GET请求，跳转GitHub登录界面，获取用户授权，得到code

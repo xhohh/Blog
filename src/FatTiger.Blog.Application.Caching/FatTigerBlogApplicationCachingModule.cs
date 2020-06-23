@@ -1,6 +1,7 @@
 ﻿using Volo.Abp.Caching;
 using Volo.Abp.Modularity;
 using FatTiger.Blog.Domain;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace FatTiger.Blog.Application.Caching
 {
@@ -12,7 +13,12 @@ namespace FatTiger.Blog.Application.Caching
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
-            base.ConfigureServices(context);
+            context.Services.AddStackExchangeRedisCache(options =>
+            {
+                options.Configuration = AppSettings.Caching.RedisConnectionString;
+                //options.InstanceName
+                //options.ConfigurationOptions
+            });
         }
     }
 }

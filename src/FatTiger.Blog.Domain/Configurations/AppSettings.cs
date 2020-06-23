@@ -62,5 +62,16 @@ namespace FatTiger.Blog.Domain
 
             public static int Expires => Convert.ToInt32(_config["JWT:Expires"]);
         }
+
+        /// <summary>
+        /// Caching
+        /// </summary>
+        public static class Caching
+        {
+            /// <summary>
+            /// RedisConnectionString
+            /// </summary>
+            public static string RedisConnectionString => _config["Caching:RedisConnectionString"];
+        }
     }
 }
