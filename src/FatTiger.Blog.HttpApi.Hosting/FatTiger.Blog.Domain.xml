@@ -173,5 +173,32 @@
             Application name
             </summary>
         </member>
+        <member name="M:FatTiger.Blog.Domain.Wallpaper.Repositories.IWallpaperRepository.BulkInsertAsync(System.Collections.Generic.IEnumerable{FatTiger.Blog.Domain.Wallpaper.Wallpaper})">
+            <summary>
+            批量插入
+            </summary>
+            <param name="wallpapers"></param>
+            <returns></returns>
+        </member>
+        <member name="P:FatTiger.Blog.Domain.Wallpaper.Wallpaper.Url">
+            <summary>
+            URL
+            </summary>
+        </member>
+        <member name="P:FatTiger.Blog.Domain.Wallpaper.Wallpaper.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:FatTiger.Blog.Domain.Wallpaper.Wallpaper.Type">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:FatTiger.Blog.Domain.Wallpaper.Wallpaper.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
     </members>
 </doc>

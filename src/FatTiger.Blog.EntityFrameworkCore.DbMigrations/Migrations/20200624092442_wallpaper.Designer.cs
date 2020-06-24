@@ -4,14 +4,16 @@ using FatTiger.Blog.EntityFrameworkCore.DbMigrations.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FatTiger.Blog.EntityFrameworkCore.DbMigrations.Migrations
 {
     [DbContext(typeof(FatTigerBlogMigrationsDbContext))]
-    partial class FatTigerBlogMigrationsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200624092442_wallpaper")]
+    partial class wallpaper
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

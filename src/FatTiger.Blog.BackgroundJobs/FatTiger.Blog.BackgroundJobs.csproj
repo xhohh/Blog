@@ -7,14 +7,18 @@
   <ItemGroup>
     <PackageReference Include="Hangfire.Dashboard.BasicAuthorization" Version="1.0.2" />
     <PackageReference Include="HangFire.SqlServer" Version="1.7.11" />
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.24" />
     <PackageReference Include="log4net" Version="2.0.8" />
     <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="3.1.5" />
+    <PackageReference Include="PuppeteerSharp" Version="2.0.3" />
     <PackageReference Include="Volo.Abp.AspNetCore" Version="2.9.0" />
     <PackageReference Include="Volo.Abp.BackgroundJobs.HangFire" Version="2.9.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FatTiger.Blog.Application.Contracts\FatTiger.Blog.Application.Contracts.csproj" />
     <ProjectReference Include="..\FatTiger.Blog.Domain\FatTiger.Blog.Domain.csproj" />
+    <ProjectReference Include="..\FatTiger.Blog.ToolKits\FatTiger.Blog.ToolKits.csproj" />
   </ItemGroup>
 
 </Project>

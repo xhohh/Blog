@@ -1,5 +1,6 @@
 ﻿using FatTiger.Blog.Domain.Blog;
 using FatTiger.Blog.Domain.Shared;
+using FatTiger.Blog.Domain.Wallpaper;
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp;
 using static FatTiger.Blog.Domain.Shared.FatTigerBlogDbConsts;
@@ -55,6 +56,17 @@ namespace FatTiger.Blog.EntityFrameworkCore
                 b.HasKey(x => x.Id);
                 b.Property(x => x.Title).HasMaxLength(20).IsRequired();
                 b.Property(x => x.LinkUrl).HasMaxLength(100).IsRequired();
+            });
+
+            builder.Entity<Wallpaper>(b =>
+            {
+                b.ToTable(FatTigerBlogConsts.DbTablePrefix + DbTableName.Wallpapers);
+                b.HasKey(x => x.Id);
+                b.Property(x => x.Id).ValueGeneratedOnAdd();
+                b.Property(x => x.Url).HasMaxLength(200).IsRequired();
+                b.Property(x => x.Title).HasMaxLength(100).IsRequired();
+                b.Property(x => x.Type).HasColumnType("int").IsRequired();
+                b.Property(x => x.CreateTime).HasColumnType("datetime").IsRequired();
             });
         }
     }
