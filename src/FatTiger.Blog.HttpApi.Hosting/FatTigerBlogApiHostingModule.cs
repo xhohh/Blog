@@ -1,4 +1,6 @@
-﻿using FatTiger.Blog.Domain;
+﻿using FatTiger.Blog.BackgroundJobs;
+using FatTiger.Blog.BackgroundJobs.Jobs;
+using FatTiger.Blog.Domain;
 using FatTiger.Blog.HttpApi.Hosting.Filters;
 using FatTiger.Blog.HttpApi.Hosting.Middleware;
 using FatTiger.Blog.Swagger;
@@ -26,7 +28,8 @@ namespace FatTiger.Blog.HttpApi.Hosting
        typeof(AbpAutofacModule),
        typeof(FatTigerBlogHttpApiModule),
        typeof(FatTigerBlogSwaggerModule),
-       typeof(FatTigerBlogFrameworkCoreModule)
+       typeof(FatTigerBlogFrameworkCoreModule),
+       typeof(FatTigerBlogBackgroundJobsModule)
     )]
     public class FatTigerBlogApiHostingModule : AbpModule
     {
@@ -90,6 +93,9 @@ namespace FatTiger.Blog.HttpApi.Hosting
 
             // Http请求
             context.Services.AddHttpClient();
+
+            ////测试.net core内置定时任务处理方式
+            //context.Services.AddTransient<IHostedService, HelloWorldJob>();
         }
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)

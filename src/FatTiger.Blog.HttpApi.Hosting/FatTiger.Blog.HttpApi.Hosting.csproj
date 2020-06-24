@@ -12,6 +12,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Volo.Abp.Autofac" Version="2.9.0" />
+    <ProjectReference Include="..\FatTiger.Blog.BackgroundJobs\FatTiger.Blog.BackgroundJobs.csproj" />
     <ProjectReference Include="..\FatTiger.Blog.EntityFrameworkCore.DbMigrations\FatTiger.Blog.EntityFrameworkCore.DbMigrations.csproj" />
 
     <ProjectReference Include="..\FatTiger.Blog.HttpApi\FatTiger.Blog.HttpApi.csproj" />
