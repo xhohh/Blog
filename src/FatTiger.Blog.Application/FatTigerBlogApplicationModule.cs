@@ -11,13 +11,18 @@ namespace FatTiger.Blog.Application
 {
     [DependsOn(
         typeof(AbpIdentityApplicationModule),
+        typeof(AbpAutoMapperModule),
         typeof(FatTigerBlogApplicationCachingModule)
     )]
     public class FatTigerBlogApplicationModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
-
+            Configure<AbpAutoMapperOptions>(options =>
+            {
+                options.AddMaps<FatTigerBlogApplicationModule>(validate: true);
+                options.AddProfile<FatTigerBlogAutoMapperProfile>(validate: true);
+            });
         }
     }
 }
