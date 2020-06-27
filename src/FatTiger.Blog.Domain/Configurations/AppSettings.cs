@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace FatTiger.Blog.Domain
@@ -79,6 +80,71 @@ namespace FatTiger.Blog.Domain
             public static string Login => _config["Hangfire:Login"];
 
             public static string Password => _config["Hangfire:Password"];
+        }
+
+        public static class Email
+        {
+            /// <summary>
+            /// Host
+            /// </summary>
+            public static string Host => _config["Email:Host"];
+
+            /// <summary>
+            /// Port
+            /// </summary>
+            public static int Port => Convert.ToInt32(_config["Email:Port"]);
+
+            /// <summary>
+            /// UseSsl
+            /// </summary>
+            public static bool UseSsl => Convert.ToBoolean(_config["Email:UseSsl"]);
+
+            /// <summary>
+            /// From
+            /// </summary>
+            public static class From
+            {
+                /// <summary>
+                /// Username
+                /// </summary>
+                public static string Username => _config["Email:From:Username"];
+
+                /// <summary>
+                /// Password
+                /// </summary>
+                public static string Password => _config["Email:From:Password"];
+
+                /// <summary>
+                /// Name
+                /// </summary>
+                public static string Name => _config["Email:From:Name"];
+
+                /// <summary>
+                /// Address
+                /// </summary>
+                public static string Address => _config["Email:From:Address"];
+            }
+
+            /// <summary>
+            /// To
+            /// </summary>
+            public static IDictionary<string, string> To
+            {
+                get
+                {
+                    var dic = new Dictionary<string, string>();
+
+                    var emails = _config.GetSection("Email:To");
+                    foreach (IConfigurationSection section in emails.GetChildren())
+                    {
+                        var name = section["Name"];
+                        var address = section["Address"];
+
+                        dic.Add(name, address);
+                    }
+                    return dic;
+                }
+            }
         }
     }
 }

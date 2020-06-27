@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using FatTiger.Blog.BackgroundJobs.Jobs.Wallpapers;
 using FatTiger.Blog.BackgroundJobs.Jobs.HotNews;
+using FatTiger.Blog.BackgroundJobs.Jobs.PuppeteerTest;
 
 namespace FatTiger.Blog.BackgroundJobs
 {
@@ -25,6 +26,13 @@ namespace FatTiger.Blog.BackgroundJobs
             var job = service.GetService<HotNewsJob>();
 
             RecurringJob.AddOrUpdate("每日热点数据抓取", () => job.ExecuteAsync(), CronType.Hour(1, 2));
+        }
+
+        public static void UsePuppeteerTestJob(this IServiceProvider service)
+        {
+            var job = service.GetService<PuppeteerTestJob>();
+
+            BackgroundJob.Enqueue(() => job.ExecuteAsync());
         }
     }
 }

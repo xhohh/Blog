@@ -3,7 +3,9 @@ using FatTiger.Blog.Domain.Shared.Enum;
 using FatTiger.Blog.Domain.Wallpaper;
 using FatTiger.Blog.Domain.Wallpaper.Repositories;
 using FatTiger.Blog.ToolKits.Extensions;
+using FatTiger.Blog.ToolKits.Helper;
 using HtmlAgilityPack;
+using MimeKit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -90,6 +92,17 @@ namespace FatTiger.Blog.BackgroundJobs.Jobs.Wallpapers
             {
                 await _wallpaperRepository.BulkInsertAsync(wallpapers);
             }
+
+            // 发送Email
+            var message = new MimeMessage
+            {
+                Subject = "【定时任务】壁纸数据抓取任务推送",
+                Body = new BodyBuilder
+                {
+                    HtmlBody = $"本次抓取到{wallpapers.Count()}条数据，时间:{DateTime.Now:yyyy-MM-dd HH:mm:ss}"
+                }.ToMessageBody()
+            };
+            await EmailHelper.SendAsync(message);
         }
     }
 }

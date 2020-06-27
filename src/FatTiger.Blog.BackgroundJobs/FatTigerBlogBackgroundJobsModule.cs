@@ -62,6 +62,8 @@ namespace FatTiger.Blog.BackgroundJobs
             service.UseWallpaperJob();
 
             service.UseHotNewsJob();
+
+            service.UsePuppeteerTestJob();
         }
     }
 }
