@@ -60,6 +60,8 @@ namespace FatTiger.Blog.BackgroundJobs
             var service = context.ServiceProvider;
 
             service.UseWallpaperJob();
+
+            service.UseHotNewsJob();
         }
     }
 }

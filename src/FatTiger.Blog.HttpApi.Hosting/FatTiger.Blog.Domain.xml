@@ -173,6 +173,33 @@
             Application name
             </summary>
         </member>
+        <member name="P:FatTiger.Blog.Domain.HotNews.HotNews.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:FatTiger.Blog.Domain.HotNews.HotNews.Url">
+            <summary>
+            链接
+            </summary>
+        </member>
+        <member name="P:FatTiger.Blog.Domain.HotNews.HotNews.SourceId">
+            <summary>
+            SourceId
+            </summary>
+        </member>
+        <member name="P:FatTiger.Blog.Domain.HotNews.HotNews.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="M:FatTiger.Blog.Domain.HotNews.Repositories.IHotNewsRepository.BulkInsertAsync(System.Collections.Generic.IEnumerable{FatTiger.Blog.Domain.HotNews.HotNews})">
+            <summary>
+            批量插入
+            </summary>
+            <param name="hotNews"></param>
+            <returns></returns>
+        </member>
         <member name="M:FatTiger.Blog.Domain.Wallpaper.Repositories.IWallpaperRepository.BulkInsertAsync(System.Collections.Generic.IEnumerable{FatTiger.Blog.Domain.Wallpaper.Wallpaper})">
             <summary>
             批量插入
