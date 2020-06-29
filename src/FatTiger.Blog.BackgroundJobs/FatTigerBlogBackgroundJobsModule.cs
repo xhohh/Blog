@@ -57,13 +57,13 @@ namespace FatTiger.Blog.BackgroundJobs
                 DashboardTitle = "任务调度中心"
             });
 
-            var service = context.ServiceProvider;
+            //var service = context.ServiceProvider;
 
-            service.UseWallpaperJob();
+            //service.UseWallpaperJob();
 
-            service.UseHotNewsJob();
+            //service.UseHotNewsJob();
 
-            service.UsePuppeteerTestJob();
+            //service.UsePuppeteerTestJob();
         }
     }
 }
