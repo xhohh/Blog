@@ -23,5 +23,19 @@ namespace FatTiger.Blog.Application.Blog
         /// <param name="url"></param>
         /// <returns></returns>
         Task<ServiceResult<PostDetailDto>> GetPostDetailAsync(string url);
+
+        /// <summary>
+        /// 通过分类名称查询文章列表
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        Task<ServiceResult<IEnumerable<QueryPostDto>>> QueryPostsByCategoryAsync(string name);
+
+        /// <summary>
+        /// 通过标签名称查询文章列表
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        Task<ServiceResult<IEnumerable<QueryPostDto>>> QueryPostsByTagAsync(string name);
     }
 }

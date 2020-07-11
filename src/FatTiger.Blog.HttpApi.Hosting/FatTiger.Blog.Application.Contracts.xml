@@ -129,6 +129,11 @@
             链接
             </summary>
         </member>
+        <member name="P:FatTiger.Blog.Application.Contracts.Blog.QueryCategoryDto.Count">
+            <summary>
+            总数
+            </summary>
+        </member>
         <member name="P:FatTiger.Blog.Application.Contracts.Blog.QueryPostDto.Year">
             <summary>
             年份
@@ -137,6 +142,11 @@
         <member name="P:FatTiger.Blog.Application.Contracts.Blog.QueryPostDto.Posts">
             <summary>
             Posts
+            </summary>
+        </member>
+        <member name="P:FatTiger.Blog.Application.Contracts.Blog.QueryTagDto.Count">
+            <summary>
+            总数
             </summary>
         </member>
         <member name="P:FatTiger.Blog.Application.Contracts.Blog.TagDto.TagName">
