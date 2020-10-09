@@ -78,5 +78,40 @@
             <param name="name"></param>
             <returns></returns>
         </member>
+        <member name="M:FatTiger.Blog.HttpApi.Controllers.BlogController.QueryFriendLinksAsync">
+            <summary>
+            查询友链列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FatTiger.Blog.HttpApi.Controllers.BlogController.QueryPostsForAdminAsync(FatTiger.Blog.Application.Contracts.PagingInput)">
+            <summary>
+            分页查询文章列表
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FatTiger.Blog.HttpApi.Controllers.BlogController.InsertPostAsync(FatTiger.Blog.Application.Contracts.Blog.Params.EditPostInput)">
+            <summary>
+            新增文章
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FatTiger.Blog.HttpApi.Controllers.BlogController.UpdatePostAsync(System.Int32,FatTiger.Blog.Application.Contracts.Blog.Params.EditPostInput)">
+            <summary>
+            更新文章
+            </summary>
+            <param name="id"></param>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FatTiger.Blog.HttpApi.Controllers.BlogController.DeletePostAsync(System.Int32)">
+            <summary>
+            删除文章
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

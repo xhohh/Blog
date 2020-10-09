@@ -19,6 +19,8 @@ namespace FatTiger.Blog.Application
             CreateMap<FriendLink, FriendLinkDto>();
 
             CreateMap<EditPostInput, Post>().ForMember(x => x.Id, opt => opt.Ignore());
+
+            CreateMap<Post, PostForAdminDto>().ForMember(x => x.Tags, opt => opt.Ignore());
         }
     }
 }

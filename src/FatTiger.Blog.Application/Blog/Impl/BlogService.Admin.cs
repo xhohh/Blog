@@ -42,6 +42,9 @@ namespace FatTiger.Blog.Application.Blog.Impl
 
             await _postTagRepository.BulkInsertAsync(postTags);
 
+            // 执行清除缓存操作
+            await _blogCacheService.RemoveAsync(CachePrefix.Blog_Post);
+
             result.IsSuccess(ResponseText.INSERT_SUCCESS);
 
             return result;
@@ -124,6 +127,9 @@ namespace FatTiger.Blog.Application.Blog.Impl
                                 });
             await _postTagRepository.BulkInsertAsync(postTags);
 
+            // 执行清除缓存操作
+            await _blogCacheService.RemoveAsync(CachePrefix.Blog_Post);
+
             result.IsSuccess(ResponseText.UPDATE_SUCCESS);
             return result;
 
@@ -149,8 +155,40 @@ namespace FatTiger.Blog.Application.Blog.Impl
             await _postRepository.DeleteAsync(id);
             await _postTagRepository.DeleteAsync(x => x.PostId == id);
 
+            // 执行清除缓存操作
+            await _blogCacheService.RemoveAsync(CachePrefix.Blog_Post);
+
             result.IsSuccess(ResponseText.DELETE_SUCCESS);
             return result;
         }
+
+
+        /// <summary>
+        /// 获取文章详情
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public async Task<ServiceResult<PostForAdminDto>> GetPostForAdminAsync(int id)
+        {
+            var result = new ServiceResult<PostForAdminDto>();
+
+            var post = await _postRepository.GetAsync(id);
+
+            var tags = from post_tags in await _postTagRepository.GetListAsync()
+                       join tag in await _tagRepository.GetListAsync()
+                       on post_tags.TagId equals tag.Id
+                       where post_tags.PostId.Equals(post.Id)
+                       select tag.TagName;
+
+            var detail = ObjectMapper.Map<Post, PostForAdminDto>(post);
+
+            detail.Tags = tags;
+            detail.Url = post.Url.Split("/").Where(x => !string.IsNullOrEmpty(x)).Last();
+
+            result.IsSuccess(detail);
+            return result;
+        }
+
+
     }
 }

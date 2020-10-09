@@ -14,6 +14,16 @@
             展示名称
             </summary>
         </member>
+        <member name="P:FatTiger.Blog.Application.Contracts.Blog.FriendLinkDto.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:FatTiger.Blog.Application.Contracts.Blog.FriendLinkDto.LinkUrl">
+            <summary>
+            链接
+            </summary>
+        </member>
         <member name="P:FatTiger.Blog.Application.Contracts.Blog.PostBriefDto.Title">
             <summary>
             标题
@@ -32,6 +42,11 @@
         <member name="P:FatTiger.Blog.Application.Contracts.Blog.PostBriefDto.CreationTime">
             <summary>
             创建时间
+            </summary>
+        </member>
+        <member name="P:FatTiger.Blog.Application.Contracts.Blog.PostBriefForAdminDto.Id">
+            <summary>
+            主键
             </summary>
         </member>
         <member name="P:FatTiger.Blog.Application.Contracts.Blog.PostDetailDto.Title">
@@ -117,6 +132,11 @@
         <member name="P:FatTiger.Blog.Application.Contracts.Blog.PostDto.CreationTime">
             <summary>
             创建时间
+            </summary>
+        </member>
+        <member name="P:FatTiger.Blog.Application.Contracts.Blog.PostForAdminDto.Tags">
+            <summary>
+            标签列表
             </summary>
         </member>
         <member name="P:FatTiger.Blog.Application.Contracts.Blog.PostForPagedDto.Title">
