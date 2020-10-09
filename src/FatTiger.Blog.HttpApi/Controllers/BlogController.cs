@@ -1,6 +1,7 @@
 ﻿using FatTiger.Blog.Application.Blog;
 using FatTiger.Blog.Application.Contracts;
 using FatTiger.Blog.Application.Contracts.Blog;
+using FatTiger.Blog.Application.Contracts.Blog.Params;
 using FatTiger.Blog.ToolKits.Base;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -116,6 +117,74 @@ namespace FatTiger.Blog.HttpApi.Controllers
         public async Task<ServiceResult<IEnumerable<QueryPostDto>>> QueryPostsByTagAsync(string name)
         {
             return await _blogService.QueryPostsByTagAsync(name);
+        }
+
+        /// <summary>
+        /// 查询友链列表
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("friendlinks")]
+        public async Task<ServiceResult<IEnumerable<FriendLinkDto>>> QueryFriendLinksAsync()
+        {
+            return await _blogService.QueryFriendLinksAsync();
+        }
+
+        /// <summary>
+        /// 分页查询文章列表
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Authorize]
+        [Route("admin/posts")]
+        [ApiExplorerSettings(GroupName = Grouping.GroupName_v2)]
+        public async Task<ServiceResult<PagedList<QueryPostForAdminDto>>> QueryPostsForAdminAsync([FromQuery] PagingInput input)
+        {
+            return await _blogService.QueryPostsForAdminAsync(input);
+        }
+
+        /// <summary>
+        /// 新增文章
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Authorize]
+        [Route("post")]
+        [ApiExplorerSettings(GroupName = Grouping.GroupName_v2)]
+        public async Task<ServiceResult> InsertPostAsync([FromBody] EditPostInput input)
+        {
+            return await _blogService.InsertPostAsync(input);
+        }
+
+        /// <summary>
+        /// 更新文章
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        [HttpPut]
+        [Authorize]
+        [Route("post")]
+        [ApiExplorerSettings(GroupName = Grouping.GroupName_v2)]
+        public async Task<ServiceResult> UpdatePostAsync([Required] int id, [FromBody] EditPostInput input)
+        {
+            return await _blogService.UpdatePostAsync(id, input);
+        }
+
+        /// <summary>
+        /// 删除文章
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpDelete]
+        [Authorize]
+        [Route("post")]
+        [ApiExplorerSettings(GroupName = Grouping.GroupName_v2)]
+        public async Task<ServiceResult> DeletePostAsync([Required] int id)
+        {
+            return await _blogService.DeletePostAsync(id);
         }
     }
 }

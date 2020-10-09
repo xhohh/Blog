@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using FatTiger.Blog.Application.Contracts.Blog;
+using FatTiger.Blog.Application.Contracts.Blog.Params;
 using FatTiger.Blog.Domain.Blog;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,10 @@ namespace FatTiger.Blog.Application
             CreateMap<Post, PostDto>();
 
             CreateMap<PostDto, Post>().ForMember(x => x.Id, opt => opt.Ignore());
+
+            CreateMap<FriendLink, FriendLinkDto>();
+
+            CreateMap<EditPostInput, Post>().ForMember(x => x.Id, opt => opt.Ignore());
         }
     }
 }
