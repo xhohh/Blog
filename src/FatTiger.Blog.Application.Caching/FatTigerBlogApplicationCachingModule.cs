@@ -2,6 +2,8 @@
 using Volo.Abp.Modularity;
 using FatTiger.Blog.Domain;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Caching.Distributed;
+using Microsoft.Extensions.Caching.Redis;
 
 namespace FatTiger.Blog.Application.Caching
 {
@@ -19,6 +21,13 @@ namespace FatTiger.Blog.Application.Caching
                 //options.InstanceName
                 //options.ConfigurationOptions
             });
+
+            var csredis = new CSRedis.CSRedisClient(AppSettings.Caching.RedisConnectionString);
+            RedisHelper.Initialization(csredis);
+
+            context.Services.AddSingleton<IDistributedCache>(new CSRedisCache(RedisHelper.Instance));
         }
+
+
     }
 }
